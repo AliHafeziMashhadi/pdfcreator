@@ -1,0 +1,277 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Agent Info Section Styles */
+#agent-info {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.agent-customer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.agent-customer > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+#agent-info label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+}
+
+#agent-info input,
+#agent-info select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Rugs Mentioned Checkboxes */
+#rugs-mentioned-container {
+  margin-top: 10px;
+}
+
+#rugs-mentioned-container label {
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+#rugs-mentioned-container input {
+  margin-right: 5px;
+}
+
+/* Rug Input Styles */
+.rug-input {
+  background: #fafafa;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.rug-input span {
+  font-weight: bold;
+  margin-right: 10px;
+  min-width: 70px;
+}
+
+.rug-input label {
+  margin-right: 8px;
+  font-weight: bold;
+  min-width: 60px;
+}
+
+.rug-input input[type="number"],
+.rug-input input[type="text"],
+.rug-input select,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.area-container {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .rug-input input[type="number"],
+  .rug-input input[type="text"],
+  .rug-input select {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+/* General Notes Section Styles */
+#general-notes-section {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+/* Questions Section Styles */
+#questions {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+#questions label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#questions p {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* Output Section Styles */
+#customer-quote-output,
+#intel-output {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  background: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button.copy-button {
+  background: #28a745;
+}
+
+button.copy-button:hover {
+  background: #1e7e34;
+}
+
+/* Blink Green Animation for Calculate button */
+.blink-green {
+  animation: blinkGreen 0.5s;
+}
+
+@keyframes blinkGreen {
+  0% { background-color: #007bff; }
+  50% { background-color: #28a745; }
+  100% { background-color: #007bff; }
+}
+
+/* PDF Quote Section Styles */
+#pdf-quote-section {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 20px 0;
+  display: none;
+}
+
+#pdf-quote-section h2 {
+  margin-bottom: 20px;
+}
+
+.pdf-input-group {
+  margin-bottom: 15px;
+}
+
+.pdf-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.pdf-input-group input,
+.pdf-input-group select,
+.pdf-input-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.pdf-input-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.rug-tier-selection {
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#generate-pdf {
+  background: #dc3545;
+  color: white;
+  margin-top: 15px;
+}
+
+#generate-pdf:hover {
+  background: #c82333;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .rug-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rug-input label,
+  .rug-input input,
+  .rug-input select {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rug Pricing Calculator</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Agent Info Section -->
+    <div id="agent-info">
+      <div class="agent-customer">
+        <div>
+          <label for="agent">Agent Name:</label>
+          <select id="agent">
+            <option value="Ali" selected>Ali</option>
+            <option value="Ellie">Ellie</option>
+            <option value="Kat">Kat</option>
+          </select>
+        </div>
+        <div>
+          <label for="customer-name">Customer Name:</label>
+          <input type="text" id="customer-name" placeholder="Enter Customer Name">
+        </div>
+        <div>
+          <label for="service-option">Service Option:</label>
+          <select id="service-option">
+            <option value="pickup">Pick up</option>
+            <option value="dropoff">Drop off</option>
+            <option value="both" selected>Both</option>
+          </select>
+        </div>
+      </div>
+      <!-- Rugs Mentioned Checkboxes -->
+      <div id="rugs-mentioned-container">
+        <label>Rugs Mentioned:</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <label><input type="checkbox" name="rugs-mentioned" value="wool"> Wool</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="persian"> Persian</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="oriental"> Oriental</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="flatweave"> Flatweave</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="moroccan"> Moroccan</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="modern"> Modern</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="artificial silk"> Artificial Silk</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="jute"> Jute</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="sisal"> Sisal</label>
+          <label><input type="checkbox" name="rugs-mentioned" value="shag"> Shag</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rug Container -->
+    <div id="rug-container">
+      <!-- Example initial rug -->
+      <div class="rug-input" id="rug-1">
+        <span id="rug-label-1">Rug #1</span>
+
+        <!-- Width/Length group -->
+        <label for="width1" class="dimension-label">Width:</label>
+        <input type="number" id="width1" name="width1" />
+        <label for="length1" class="dimension-label">Length:</label>
+        <input type="number" id="length1" name="length1" />
+
+        <!-- Area container (sq meter) -->
+        <div class="area-container">
+          <label for="area1">Area (sq meter):</label>
+          <input type="number" id="area1" name="area1" placeholder="Enter area in sq meter" />
+        </div>
+
+        <!-- Notes -->
+        <input type="text" id="notes1" class="notes-input" placeholder="Notes for Rug #1" />
+
+        <!-- Unit selector -->
+        <label for="unit1">Unit:</label>
+        <select id="unit1" name="unit1">
+          <option value="ft" selected>ft</option>
+          <option value="in">in</option>
+          <option value="sq meter">sq meter</option>
+        </select>
+
+        <button class="delete-rug" data-rug-id="1">Delete</button>
+      </div>
+    </div>
+    <button id="add-rug">Add Rug</button>
+    <button id="calculate">Calculate</button>
+
+    <!-- General Notes Section -->
+    <div id="general-notes-section">
+      <h2>General Notes</h2>
+      <textarea id="general-notes" rows="4" placeholder="Enter general notes here"></textarea>
+    </div>
+
+    <!-- Questions Section -->
+    <div id="questions">
+      <h2>Questions</h2>
+      <p>Please ask: "Is it okay if I ask you a few questions?" before proceeding.</p>
+
+      <div id="question1-container">
+        <label for="question1">1. Can you tell me anything you know about the rugs (e.g., if they're handmade, sizes, fiber content, where you got them from)?</label>
+        <textarea id="question1" rows="4" cols="50"></textarea>
+      </div>
+      <br />
+
+      <div id="question2-container">
+        <label for="question2">2. Any stains or odors?</label>
+        <select id="question2">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div id="question2-details" style="display: none;">
+          <br />
+          <label for="question2a">So after the rugs were stained, did you ever try cleaning them yourself?</label>
+          <select id="question2a">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+          <div id="question2a-details" style="display: none;">
+            <br />
+            <label for="question2aa">How did that go? Did any dyes bleed?</label>
+            <select id="question2aa">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div id="question3-container">
+        <label for="question3">3. Have you ever cleaned these particular rugs?</label>
+        <select id="question3">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div id="question3-details">
+          <br />
+          <label for="question3a">If yes, how long ago did you clean them? If not, how long have you had the rugs?</label>
+          <textarea id="question3a" rows="4" cols="50"></textarea>
+        </div>
+      </div>
+      <br />
+
+      <div id="question4-container">
+        <label for="question4">4. Have you ever worked with a professional rug cleaning company before?</label>
+        <select id="question4">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div id="question4-details" style="display: none;">
+          <br />
+          <label for="question4a">What did you like or not like about working with them?</label>
+          <textarea id="question4a" rows="4" cols="50"></textarea>
+        </div>
+      </div>
+      <br />
+
+      <div id="question5-container">
+        <label for="question5">5. Any kids or pets in the house?</label>
+        <textarea id="question5" rows="4" cols="50"></textarea>
+      </div>
+      <br />
+
+      <div id="question6-container">
+        <label for="question6">6. What's most important for you, price, turnaround time or quality? Or is there a specific time you need these by?</label>
+        <textarea id="question6" rows="4" cols="50"></textarea>
+      </div>
+      <br />
+
+      <div id="question7-container">
+        <label for="question7">7. Have I asked about everything that's important to you?</label>
+        <textarea id="question7" rows="4" cols="50"></textarea>
+      </div>
+    </div>
+
+    <!-- PDF Quote Section -->
+    <div id="pdf-quote-section">
+      <h2>Generate PDF Quote</h2>
+      
+      <div class="pdf-input-group">
+        <label for="pickup-address">Pickup Address:</label>
+        <input type="text" id="pickup-address" placeholder="Enter pickup address">
+      </div>
+
+      <div class="pdf-input-group">
+        <label for="pickup-date">Date of Pickup:</label>
+        <input type="date" id="pickup-date">
+      </div>
+
+      <div class="pdf-input-group">
+        <label for="request-reason">Reason for Request:</label>
+        <textarea id="request-reason" placeholder="Enter the reason for the cleaning request"></textarea>
+      </div>
+
+      <div class="pdf-input-group">
+        <label for="tier-reason">Reason for Tier Selection:</label>
+        <textarea id="tier-reason" placeholder="Explain why specific tiers were recommended"></textarea>
+      </div>
+
+      <div class="pdf-input-group">
+        <h3>Recommended Tiers for Each Rug</h3>
+        <div id="rug-tier-recommendations">
+          <!-- Dynamically populated based on rugs entered -->
+        </div>
+      </div>
+
+      <button id="generate-pdf">Generate PDF Quote</button>
+    </div>
+
+    <!-- Output Sections -->
+    <div id="customer-quote-output"></div>
+    <button id="copy-customer-quote" class="copy-button">Copy Customer Quote</button>
+
+    <div id="intel-output"></div>
+    <button id="copy-intel" class="copy-button">Copy Intel Section</button>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
